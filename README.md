@@ -1,6 +1,6 @@
 # Human-Like Auto Typer
 
-This Python script simulates human-like typing of any multi-line text input, with random typos, backspaces, and variable typing speeds. It can be used to auto-fill forms, demo typing behavior, or generate realistic input patterns for testing, don't use it for bad things.
+This Python script simulates human-like typing of any multi-line text input, with random typos, backspaces, and variable typing speeds. It can be used to auto-fill forms, or generate realistic input patterns for testing, don't use it for bad things.
 
 ## Features
 
