@@ -18,7 +18,8 @@ A smart auto-typing desktop app that mimics human behavior — with typos, backs
 - 
 ### Note
 
-the timing isnt correct enough because there are multiple factors affecting time (the mistakes and their correction, wpm, how many characters, the time given)
+- The timing isnt correct enough because there are multiple factors affecting time (the mistakes and their correction, wpm, how many characters, the time given)
+
 ---
 
 ### Requirements
