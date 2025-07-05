@@ -16,7 +16,8 @@ A smart auto-typing desktop app that mimics human behavior — with typos, backs
 - 📊 **Live statistics**: Characters typed, time elapsed, typing speed
 - 🪟 **Floating mini-window**: Always-on-top status display (optional)
 - 
-#### Note
+### Note
+
 the timing isnt correct enough because there are multiple factors affecting time (the mistakes and their correction, wpm, how many characters, the time given)
 ---
 
