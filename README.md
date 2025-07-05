@@ -1,22 +1,34 @@
 # Human-Like Auto Typer
 
-This Python script simulates human-like typing of any multi-line text input, with random typos, backspaces, and variable typing speeds. It can be used to auto-fill forms, or generate realistic input patterns for testing, don't use it for bad things.
-
-## Features
-
--  Simulates human typing with:
-  - Random typos and corrections
-  - Variable delay between characters
-  - Typing interruptions
+A smart auto-typing desktop app that mimics human behavior — with typos, backspaces, customizable speed, and even live stats. Built using Python and Tkinter.
 
 ---
 
-## 🛠 Requirements
+## 🔥 Features
 
-- Python 3.6+
-- [`keyboard`](https://pypi.org/project/keyboard/) module
+- ⌨️ **Human-like typing**: Simulates natural typing with mistakes and corrections
+- 🕒 **Custom timing**: Set total typing time or WPM (words per minute)
+- 🎯 **Hotkeys**: 
+  - Start typing on your chosen key (default: `F4`)
+  - Pause/resume typing (default: `F2`)
+  - Stop typing anytime with `ESC`
+- 🌙 **Dark mode toggle**
+- 📊 **Live statistics**: Characters typed, time elapsed, typing speed
+- 🪟 **Floating mini-window**: Always-on-top status display (optional)
+- 
+#### Note
+the timing isnt correct enough because there are multiple factors affecting time (the mistakes and their correction, wpm, how many characters, the time given)
+---
 
-Install with:
+### Requirements
 
+- Python 3.8+
+- `keyboard` package:
+  ```bash
+  pip install keyboard
+  
+### How to start the code
+Download auto writer.py
 ```bash
-pip install keyboard
+py "auto writer.py"
+
