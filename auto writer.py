@@ -6,7 +6,7 @@ from tkinter import ttk, messagebox
 import threading
 
 # text: the text to be typed
-# wpm: average typing speed, measured in words per minute
+# wpm: average typing speed, measured in words per minute 
 # accuracy: float between 0 and 1, higher accuracy means less typos
 # backspace_duration: time taken for backspace to be pressed
 # correction_coefficient: determines how many typos are made before correcting them,
@@ -46,16 +46,16 @@ def update_stats():
         mini_status_var.set(f"{status_label.cget('text')} | {typed_chars} chars | {wpm} WPM")
 
 # Typing logic
-def typoses(text, total_time=None, wpm=None, accuracy=0.9, wait_key=None, break_key='esc',
+def typoses(text, total_time=None, accuracy=0.9, wait_key=None, break_key='esc',
             correction_coefficient=0.85, backspace_duration=0.04):
     global typed_chars, start_time
     typed_chars = 0
     start_time = time.time()
 
     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()[]{}<>-_+=:;\'"@#$%^&* '
-    total_chars = len(text.replace('\n', ''))
+    total_chars = len(text)
 
-    spc = total_time / total_chars if total_time else 12 / wpm
+    spc = total_time / total_chars 
     spc_low = spc * 0.2
     spc_high = spc * 1.8
 
@@ -109,14 +109,10 @@ def start_typing():
         text = text_input.get("1.0", tk.END).strip()
         total_time = float(time_entry.get())
         wait_key = wait_key_var.get().lower()
-        wpm = int(wpm_entry.get())
         pause_key = pause_key_var.get().lower()
 
         if not text:
             messagebox.showerror("Error", "Text input is empty.")
-            return
-        if wpm <= 0:
-            messagebox.showerror("Error", "WPM must be positive.")
             return
         if pause_key == wait_key:
             messagebox.showerror("Error", "Pause and wait keys must be different.")
@@ -131,12 +127,12 @@ def start_typing():
         threading.Thread(
             target=typoses,
             args=(text,),
-            kwargs={"total_time": total_time, "wpm": wpm, "accuracy": 0.85, "wait_key": wait_key},
+            kwargs={"total_time": total_time, "accuracy": 0.85, "wait_key": wait_key},
             daemon=True
         ).start()
 
     except ValueError:
-        messagebox.showerror("Error", "Invalid number for time or WPM.")
+        messagebox.showerror("Error", "Invalid number for time .")
 
 # Toggle dark/light theme
 
@@ -237,9 +233,6 @@ wait_key_menu = ttk.Combobox(frame, textvariable=wait_key_var,
                              state='readonly', width=5, style="DarkCombobox.TCombobox")
 wait_key_menu.grid(row=0, column=3, padx=5)
 
-tk.Label(frame, text="WPM:").grid(row=0, column=4, padx=5)
-wpm_entry = tk.Entry(frame, width=6)
-wpm_entry.grid(row=0, column=5, padx=5)
 
 tk.Label(frame, text="Pause Key:").grid(row=1, column=0, padx=5, pady=5)
 pause_key_var = tk.StringVar(value='f2')
@@ -258,6 +251,7 @@ stats_label = tk.Label(root, text="Typed: 0 | Time: 0s | WPM: 0", fg="gray")
 stats_label.pack()
 
 # Theme toggle
+checked_var= tk.IntVar(value=1)
 theme_check= tk.Checkbutton(root, text="Dark Mode", variable= theme_var , command= toggle_theme)
 theme_check.pack(pady=(5, 10))
 # Footer
